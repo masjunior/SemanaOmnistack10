@@ -5,10 +5,11 @@ const SearchController = require('./controllers/SearchController');
 
 const routes = Router();
 
+routes.post('/devs', DevController.store);
+
 routes.get('/devs',DevController.index);
 routes.get('/search', SearchController.index);
 
-routes.post('/devs', DevController.store);
 
 routes.delete('/devs/:id', (request, response) =>{
     console.log(request.params);
